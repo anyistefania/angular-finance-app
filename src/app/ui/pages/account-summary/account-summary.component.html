@@ -1,9 +1,13 @@
-<h4 class="text-center mt-3">Your accounts</h4>
-<div class="container mt-5 d-flex justify-content-center gap-5">
-  <div class="card col-lg-3" *ngFor="let item of accounts">
-    <div class="card-body bg-secondary-subtle p-2 text-dark p-4">
-      <h4 class="card-title">Account number</h4>
-      <span class="badge text-bg-light">{{ item }}</span>
+<section id="pricing" class="pricing section-bg">
+  <h2 class="text-center">My Accounts</h2>
+  <div class="container mt-5 d-flex justify-content-center gap-5 " data-aos="fade-up">
+    <div class="card col-lg-3" *ngFor="let item of accounts">
+      <div data-aos="fade-up" data-aos-delay="100">
+        <div class="box">
+          <h3>Account number</h3>
+          <h4>{{ item }}</h4>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
