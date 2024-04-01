@@ -5,7 +5,8 @@
       <li><a class="nav-link " href="#about" routerLink="/about">About us</a></li>
       <li><a class="nav-link " href="#services" routerLink="/sigin" >Sign in</a></li>
       <li><a class="nav-link " href="#portfolio" routerLink="/login" >Log in</a></li>
-      <li class="dropdown"><a ><span>User Profile</span> <i class="bi bi-chevron-down"></i></a>
+      <li class="dropdown"
+      *ngIf="dataProfile && emptyDataProfile(dataProfile)"><a ><span>User Profile</span> <i class="bi bi-chevron-down"></i></a>
         <ul>
           <li><a href="/dashboard">Dashboard</a></li>
           <li><a href="/accounts">Accounts</a></li>
