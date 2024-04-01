@@ -1,29 +1,40 @@
-<h4 class="text-center mt-3">Your profile</h4>
-<div
-  class="container h-75 d-flex justify-content-center align-items-center mt-3"
->
-  <div class="card p-5" style="width: 500px">
-    <div class="d-flex justify-content-center">
-      <img
-        src="../../../../assets/images/pic_profile_re_7g2h.svg"
-        class="card-img-top"
-        alt="..."
-        style="width: 150px"
-      />
-    </div>
 
-    <div class="card-body mt-3">
-      <h5 class="card-title">
-        {{ dataProfile.firstName + " " + dataProfile.lastName }}
-      </h5>
-      <p class="card-text">Cra. 75 # 24d-19, Bogotá</p>
+
+<section class="vh-100" class="background">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-6 mb-4 mb-lg-0">
+        <div class="card mb-3" style="border-radius: .5rem;">
+          <div class="row g-0">
+            <div class="col-md-4 gradient-custom text-center text-white"
+              style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+              <h5>{{ dataProfile.firstName + " " + dataProfile.lastName }}</h5>
+              <p>Customer of Bank</p>
+              <i class="far fa-edit mb-5"></i>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body p-4">
+                <h6>Information</h6>
+                <hr class="mt-0 mb-4">
+                <div class="row pt-1">
+                  <div class="col-12 mb-3">
+                    <h6>Email</h6>
+                    <p class="text-muted">{{ dataProfile.email }}</p>
+                  </div>
+                </div>
+                <div class="row pt-1">
+                  <div class="col-12 mb-3">
+                    <h6>Phone</h6>
+                    <p class="text-muted">12344</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        Rating: <ngb-rating [(rate)]="rating" [readonly]="true" />
-      </li>
-      <li class="list-group-item">Phone: 12345667</li>
-      <li class="list-group-item">Email: {{ dataProfile.email }}</li>
-    </ul>
   </div>
-</div>
+</section>
