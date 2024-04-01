@@ -1,0 +1,12 @@
+a {
+    text-decoration: none;
+  }
+  
+  .login__btn {
+    background-color: var(--clr-blue-4);
+    color: var(--clr-grey-10);
+  }
+  
+  .login__btn:hover {
+    background-color: var(--clr-blue-5);
+  }

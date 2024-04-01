@@ -1,0 +1,29 @@
+<h4 class="text-center mt-3">Your profile</h4>
+<div
+  class="container h-75 d-flex justify-content-center align-items-center mt-3"
+>
+  <div class="card p-5" style="width: 500px">
+    <div class="d-flex justify-content-center">
+      <img
+        src="../../../../assets/images/pic_profile_re_7g2h.svg"
+        class="card-img-top"
+        alt="..."
+        style="width: 150px"
+      />
+    </div>
+
+    <div class="card-body mt-3">
+      <h5 class="card-title">
+        {{ dataProfile.firstName + " " + dataProfile.lastName }}
+      </h5>
+      <p class="card-text">Cra. 75 # 24d-19, Bogotá</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        Rating: <ngb-rating [(rate)]="rating" [readonly]="true" />
+      </li>
+      <li class="list-group-item">Phone: 12345667</li>
+      <li class="list-group-item">Email: {{ dataProfile.email }}</li>
+    </ul>
+  </div>
+</div>

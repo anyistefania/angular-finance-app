@@ -1,0 +1,27 @@
+<h4 class="text-center mt-3">Your dashboard</h4>
+
+<div class="container mt-5 d-flex justify-content-center gap-5">
+  <div class="card col-lg-3">
+    <div class="card-body bg-success p-2 text-white">
+      <h3 class="card-text">$ {{ transactionAmount | number }}</h3>
+      <p class="card-title">Transactions amount</p>
+    </div>
+    <div class="card-footer bg-success p-2 text-white bg-opacity-75 p-3"></div>
+  </div>
+
+  <div class="card col-lg-3">
+    <div class="card-body p-2 bg-info">
+      <h3 class="card-text">$ {{ transactionBalance | number }}</h3>
+      <p class="card-title">Transaction balance</p>
+    </div>
+    <div class="card-footer bg-info bg-opacity-75 border-0 p-3"></div>
+  </div>
+
+  <div class="card col-lg-3">
+    <div class="card-body bg-warning">
+      <h3 class="card-text">{{ dataProfile.accounts.length || 0 }}</h3>
+      <p class="card-title">Accounts</p>
+    </div>
+    <div class="card-footer bg-warning bg-opacity-75 border-0 p-3"></div>
+  </div>
+</div>
