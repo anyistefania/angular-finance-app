@@ -1,4 +1,4 @@
-section {
+/* section {
   padding: 100px 0;
   overflow: hidden;
   width: 100%;
@@ -61,4 +61,22 @@ a {
     right: 20px;
     top: 12px;
   }
-  
+   */
+
+
+   .gradient-custom-2 { 
+    background: linear-gradient(45deg, rgba(66, 48, 210, 0.6) 0%, rgba(116, 15, 214, 0.9) 100%), url("/src/assets/hero-bg.jpg") center center no-repeat;
+
+    }
+    
+    @media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    }
+    @media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+    }
