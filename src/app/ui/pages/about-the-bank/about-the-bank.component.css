@@ -1,6 +1,10 @@
 section {
     padding: 100px 0;
     overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, rgba(66, 48, 210, 0.6) 0%, rgba(116, 15, 214, 0.9) 100%), url("/src/assets/hero-bg.jpg") center center no-repeat;
+    background-size: cover;
   }
   
   .section-bg {
@@ -27,7 +31,7 @@ section {
     display: block;
     width: 50px;
     height: 3px;
-    background: #5846f9;
+    background: #f9f8ff;
     bottom: 0;
     left: calc(50% - 25px);
   }
@@ -43,7 +47,7 @@ section {
   .about .content h3 {
     font-weight: 600;
     font-size: 32px;
-    color: #2c4964;
+    color: #f9f8ff;
   }
   
   .about .content ul {
@@ -58,7 +62,7 @@ section {
   .about .content ul i {
     font-size: 20px;
     padding-right: 4px;
-    color: #5846f9;
+    color: #26f3d8;
   }
   
   .about .content p:last-child {
