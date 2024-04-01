@@ -1,17 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TransactionsUserDataService } from '../../services/transactions-user-data.service';
 import { Transaction } from '../../interfaces/transaction';
+import { catchError, take } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-transaction-summary',
-  standalone: true,
   imports: [CommonModule],
+  standalone:true,
   templateUrl: './transaction-summary.component.html',
-  styleUrl: './transaction-summary.component.css'
+  styleUrls: ['./transaction-summary.component.css']
 })
-export class TransactionSummaryComponent {
+export class TransactionSummaryComponent implements OnInit {
   public transactionData: Transaction[] = [];
+
   constructor(private transactionsService: TransactionsUserDataService) {}
 
   ngOnInit(): void {
@@ -19,13 +22,16 @@ export class TransactionSummaryComponent {
   }
 
   getTransactions(): void {
-    this.transactionsService.getTransactions().subscribe({
-      next: (data: Transaction[]) => {
+    this.transactionsService.getTransactions()
+      .pipe(
+        take(1), // take only the first emission, unsubscribe automatically after that
+        catchError(error => {
+          console.error('There was an error!', error);
+          return throwError(error); // rethrow the error to be caught by the subscriber
+        })
+      )
+      .subscribe((data: Transaction[]) => {
         this.transactionData = data.slice(0, 10);
-      },
-      error: (error) => {
-        console.error('There was an error!', error);
-      },
-    });
+      });
   }
 }
