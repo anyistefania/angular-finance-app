@@ -1,0 +1,25 @@
+.signin__btn_name{
+    background: #5846f9;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 5px;
+  }
+  
+  .signin__btn_name:hover {
+    background: #7b27d8;
+  }
+
+  .signin__btn_home{
+    background: #261f69;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 5px;
+  }
+
+  .signin__btn_home:hover {
+    background: rgb(50, 3, 104);
+  }
