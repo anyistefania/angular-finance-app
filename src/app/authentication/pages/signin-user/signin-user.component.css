@@ -1,25 +1,18 @@
-.signin__btn_name{
-    background: #5846f9;
-    border: 0;
-    padding: 10px 24px;
-    color: #fff;
-    transition: 0.4s;
-    border-radius: 5px;
-  }
-  
-  .signin__btn_name:hover {
-    background: #7b27d8;
-  }
 
-  .signin__btn_home{
-    background: #261f69;
-    border: 0;
-    padding: 10px 24px;
-    color: #fff;
-    transition: 0.4s;
-    border-radius: 5px;
-  }
 
-  .signin__btn_home:hover {
-    background: rgb(50, 3, 104);
-  }
+  .gradient-custom-2 { 
+    background: linear-gradient(45deg, rgba(66, 48, 210, 0.6) 0%, rgba(116, 15, 214, 0.9) 100%), url("/src/assets/hero-bg.jpg") center center no-repeat;
+
+    }
+    
+    @media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    }
+    @media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+    }

@@ -1,4 +1,3 @@
-
 <section class="h-100 gradient-form" style="background-color: #eee;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -7,17 +6,10 @@
           <div class="row g-0">
             <div class="col-lg-6">
               <div class="card-body p-md-5 mx-md-4">
-
                 <div class="text-center">
                   <h4>MY APP BANK!</h4>
                 </div>
-
-                <form
-  
-                novalidate
-                [formGroup]="loginForm"
-                (ngSubmit)="onSubmit()"
-                >
+                <form novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                   <p class="text-center">Please login to your account</p>
 
                   <div class="form-outline mb-4">
@@ -30,13 +22,14 @@
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example11">Password</label>
                     <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
-                      formControlName="password" [ngClass]="{
-                      'is-invalid': submitted && loginForm.controls['password'].invalid
-                    }" />
+                      formControlName="password" 
+                      [ngClass]="{
+                      'is-invalid': submitted && loginForm.controls['password'].invalid}" />
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button" type="submit">Log
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button"
+                      type="submit">Log
                       in</button>
                   </div>
 
@@ -51,10 +44,10 @@
             </div>
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                <h4 class="mb-4">We are more than just a company</h4>
-                <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h4 class="mb-4">Welcome back to  my-app-bank!</h4>
+                <p class="small mb-0">
+                  We are glad to see you back. Please enter your username or email and password to access your account. If you have forgotten your password, don't worry, you can reset it with a few simple steps.
+                  We are here to help you pick up right where you left off and continue your journey with us.</p>
               </div>
             </div>
           </div>

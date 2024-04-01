@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
-import Swal from 'sweetalert2';
+import { CustomAlertService } from '../../services/custom-alert-service.service';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-signin-user',
+  imports: [ReactiveFormsModule, CommonModule],
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule, CommonModule],
   templateUrl: './signin-user.component.html',
   styleUrls: ['./signin-user.component.css']
 })
@@ -18,8 +18,9 @@ export class SigninUserComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthenticationService
-  ) {}
+    private authService: AuthenticationService,
+    private alertService: CustomAlertService
+  ) { }
 
   ngOnInit(): void {
     this.signInForm = this.formBuilder.group({
@@ -39,22 +40,14 @@ export class SigninUserComponent implements OnInit {
     this.authService.signIn(this.signInForm.value).subscribe({
       next: (response) => {
         localStorage.setItem('access-token', response.accessToken);
-        Swal.fire({
-          title: 'Successfully created user !',
-          timer: 1500,
-          timerProgressBar: true,
-          icon: 'info',
-          showConfirmButton: false,
-        });
+        this.alertService.showSuccessMessage('Successfully created user!');
       },
-      error: ({ error }) => {
-        Swal.fire({
-          title: error.title,
-          timer: 1500,
-          timerProgressBar: true,
-          icon: 'error',
-          showConfirmButton: false,
-        });
+      error: (error) => {
+        let errorMessage = 'An error occurred';
+        if (error && error.error && error.error.message) {
+          errorMessage = error.error.message;
+        }
+        this.alertService.showErrorMessage(errorMessage);
       },
     });
   }
